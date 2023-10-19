@@ -4,7 +4,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CategoriCard = ({ cardData }) => {
-  const { brandName, logoLink, _id } = cardData || {};
+  const { brandName, logoLink, _id, brand } = cardData || {};
+
   return (
     <div>
       <Link to={`/home/${_id}`}>

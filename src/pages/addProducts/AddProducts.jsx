@@ -4,25 +4,25 @@ const Adds = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const image = form.image.value;
+    const brand = form.brand.value;
     const name = form.name.value;
-    const brand_type = form.brand_type.value;
+    const image_link = form.image_link.value;
     const car_type = form.car_type.value;
     const price = form.price.value;
+    const ratings = form.ratings.value;
     const shortDescription = form.shortDescription.value;
-    const rating = form.rating.value;
     const formData = {
-      image,
+      brand,
       name,
-      brand_type,
+      image_link,
       car_type,
       price,
+      ratings,
       shortDescription,
-      rating,
     };
     console.log(formData);
     try {
-      const response = await fetch("http://localhost:5000/addproducts", {
+      const response = await fetch(`http://localhost:5000/allproducts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,6 +31,9 @@ const Adds = () => {
       });
       const result = await response.json();
       console.log(result);
+      if (result.insertedId) {
+        alert("product added");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -49,21 +52,6 @@ const Adds = () => {
               <div className="mt-5 grid grid-cols-1 gap-y-3 sm:grid-cols-6 gap-3">
                 <div className="col-span-6 sm:col-span-3">
                   <label
-                    htmlFor="image"
-                    className="block text-sm font-medium text-gray-900"
-                  >
-                    Image
-                  </label>
-                  <input
-                    type="text"
-                    name="image"
-                    id="image"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
-                  />
-                </div>
-
-                <div className="col-span-6 sm:col-span-3">
-                  <label
                     htmlFor="name"
                     className="block text-sm font-medium text-gray-900"
                   >
@@ -79,25 +67,41 @@ const Adds = () => {
 
                 <div className="col-span-6 sm:col-span-3">
                   <label
+                    htmlFor="image"
+                    className="block text-sm font-medium text-gray-900"
+                  >
+                    Image
+                  </label>
+                  <input
+                    type="text"
+                    name="image_link"
+                    id="image"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                  />
+                </div>
+
+                <div className="col-span-6 sm:col-span-3">
+                  <label
                     htmlFor="type"
                     className="block text-sm font-medium text-gray-900"
                   >
                     Brand Name
                   </label>
                   <select
-                    name="brand_type"
+                    name="brand"
+                    placeholder="select brand"
                     id="type"
                     className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
                   >
-                    <option value="Select Type">Select Brand Name</option>
-                    <option value="ford">Ford</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="hyundai">Hyundai</option>
-                    <option value="tesla">Tesla</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Tesla">Tesla</option>
                   </select>
                 </div>
+
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="type"
@@ -106,11 +110,11 @@ const Adds = () => {
                     Type
                   </label>
                   <select
+                    placeholder="select type"
                     name="car_type"
                     id="type"
                     className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
                   >
-                    <option value="Select Type">Select Type</option>
                     <option value="coupe">Coupe</option>
                     <option value="convertible">Convertible</option>
                     <option value="suv">SUV</option>
@@ -135,6 +139,7 @@ const Adds = () => {
                     className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
+
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="rating"
@@ -144,7 +149,7 @@ const Adds = () => {
                   </label>
                   <input
                     type="number"
-                    name="rating"
+                    name="ratings"
                     id="rating"
                     min="0"
                     max="5"
