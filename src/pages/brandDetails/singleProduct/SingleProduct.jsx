@@ -30,31 +30,39 @@ const SingleProduct = () => {
 
   return (
     <div>
-      <div className=" glass flex justify-center items-center">
-        <h1 className="text-center font-bold p-3 text-4xl text-white">
+      <div className=" dark:glass flex justify-center items-center bg-slate-100 mt-5">
+        <h1 className="text-center font-bold p-3 text-4xl dark:text-white text-gray-900 b ">
           {brand}
         </h1>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center m-10">
         <img style={{ width: "500px" }} src={image_link} alt="" />
       </div>
-      <div className="grid grid-cols-2 gap-5 p-20">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 p-20 bg-slate-100 dark:glass mt-10 rounded-lg">
         <div className="flex flex-col justify-center gap-5 text-3xl  text-white">
           <div>
-            <h1>Name : {name}</h1>
+            <h1 className="dark:text-white text-slate-800 font-semibold">
+              {name}
+            </h1>
           </div>
           <div>
-            <h1>Type : {car_type}</h1>
+            <h1 className="dark:text-white text-slate-800">
+              Type : {car_type}
+            </h1>
           </div>
           <div>
-            <h1>Price : {price}</h1>
+            <h1 className="dark:text-white text-slate-800">Price : {price}</h1>
           </div>
           <div>
-            <h1>Ratings : {ratings}</h1>
+            <h1 className="dark:text-white text-slate-800">
+              Ratings : {ratings}
+            </h1>
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <h1 className="text-xl text-white">{description}</h1>
+          <h1 className="text-xl dark:text-white text-slate-800">
+            {description}
+          </h1>
           <button
             onClick={() => handleCart(loadedData)}
             className="btn btn-outline bg-white"

@@ -20,7 +20,7 @@ const Home = () => {
       <div className="bg-transparent home mt-3">
         {/* <TopCarousel banner={slider_image}></TopCarousel>{" "} */}
         <img
-          className="lg:h-[520px] h-auto w-[100%] object-cover"
+          className="lg:h-[520px] h-auto w-[100%] object-cover rounded-lg"
           // style={{ height: "520px", width: "100%" }}
           src={bannerUrl}
           alt=""
@@ -37,37 +37,58 @@ const Home = () => {
       <div>
         <div className="mt-10">
           <div className="flex justify-center items-center p-10">
-            <AiOutlineFieldTime className=" lg:text-6xl text-4xl text-slate-800 dark:text-white" />
+            {/* <AiOutlineFieldTime className=" lg:text-6xl text-4xl text-slate-800 dark:text-white" /> */}
             <a className="font-semibold lg:text-3xl text-xl text-slate-800 dark:text-white backdrop-filter">
               Gari Dekhun Impression
             </a>
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-1 text-5xl gap-5">
-            <div className="flex justify-center items-center bg-slate-100 p-16 rounded-lg flex-col gap-5">
-              <h1 className="text-lg">Total Product</h1>
+            <div className="flex justify-center items-center dark:bg-slate-800 bg-slate-100 p-16 rounded-lg flex-col gap-5">
+              <h1 className="text-lg dark:text-white text-slate-950">
+                Total Product
+              </h1>
               <div>
-                <CountUp start={6285} end={9850} duration={3}></CountUp>
-                <span>++</span>{" "}
+                <CountUp
+                  className=" dark:text-white text-slate-950"
+                  start={6285}
+                  end={9850}
+                  duration={3}
+                ></CountUp>
+                <span className=" dark:text-white text-slate-950">+</span>{" "}
               </div>
             </div>
-            <div className="flex justify-center items-center bg-slate-100 p-16 rounded-lg flex-col gap-5">
-              <h1 className="text-lg">Total sell</h1>
+            <div className="flex justify-center items-center dark:bg-slate-800 bg-slate-100 p-16 rounded-lg flex-col gap-5">
+              <h1 className="text-lg  dark:text-white text-slate-950">
+                Total sell
+              </h1>
               <div>
-                <CountUp start={5600} end={7050} duration={3}></CountUp>
-                <span>++</span>{" "}
+                <CountUp
+                  className=" dark:text-white text-slate-950"
+                  start={5600}
+                  end={7050}
+                  duration={3}
+                ></CountUp>
+                <span className=" dark:text-white text-slate-950">+</span>{" "}
               </div>
             </div>
-            <div className="flex justify-center items-center bg-slate-100 p-16 rounded-lg flex-col gap-5">
-              <h1 className="text-lg">Total Partner</h1>
+            <div className="flex justify-center items-center dark:bg-slate-800 bg-slate-100 p-16 rounded-lg flex-col gap-5">
+              <h1 className="text-lg  dark:text-white text-slate-950">
+                Total Partner
+              </h1>
               <div>
-                <CountUp start={200} end={350} duration={3}></CountUp>
-                <span>++</span>{" "}
+                <CountUp
+                  className=" dark:text-white text-slate-950"
+                  start={200}
+                  end={350}
+                  duration={3}
+                ></CountUp>
+                <span className=" dark:text-white text-slate-950">+</span>{" "}
               </div>
             </div>
           </div>
         </div>
-        <div className="mt-10">
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 py-10 px-5 bg-slate-100 rounded-lg">
+        <div className="mt-10 mb-10">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 py-10 px-5 dark:bg-slate-800 bg-slate-100 rounded-lg">
             <div>
               <img
                 className="object-cover rounded-lg mx-auto"
@@ -76,8 +97,12 @@ const Home = () => {
               />
             </div>
             <div>
-              <h1 className="text-3xl font-semibold ">{bannerTitle}</h1>
-              <h1>{bannerDes.slice(0, 200)}...</h1>
+              <h1 className="text-3xl font-semibold  dark:text-white text-slate-950">
+                {bannerTitle}
+              </h1>
+              <h1 className=" dark:text-white text-slate-950">
+                {bannerDes.slice(0, 200)}...
+              </h1>
             </div>
           </div>
         </div>

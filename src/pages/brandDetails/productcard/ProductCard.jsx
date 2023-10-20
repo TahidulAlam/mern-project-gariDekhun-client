@@ -8,7 +8,7 @@ const ProductCard = ({ data }) => {
     data || {};
   return (
     <div>
-      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[430px]">
+      <div className="w-full max-w-sm bg-slate-100  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[430px] mx-auto">
         <div className="h-60">
           {<img className="p-8 rounded-t-lg" src={image_link} alt={name} /> ? (
             <img className="p-8 rounded-t-lg" src={image_link} alt={name} />

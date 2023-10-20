@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 // import BrandDetailsCard from "./BrandDetailsCard";
 import Banner from "./banner/Banner";
 import ProductDetailsCard from "./productcard/ProductDetailsCard";
+import BannerSlider from "./banner/BannerSlider";
 // import ProductCard from "./productcard/ProductCard";
 
 const BrandDetails = () => {
@@ -22,13 +23,14 @@ const BrandDetails = () => {
           <img style={{ width: "80px" }} src={logoLink} alt="" />
         </div>
         <div>
-          <h1 className="font-semibold text-4xl text-center text-white">
+          <h1 className="font-semibold text-4xl text-center dark:text-white text-slate-800">
             {brand}
           </h1>
         </div>
       </div>
       <div>
-        <Banner data={promotionalBanners}></Banner>
+        {/* <Banner data={promotionalBanners}></Banner> */}
+        <BannerSlider sliderData={promotionalBanners}></BannerSlider>
       </div>
       <div className="">
         {/* <h1>{brand} Products</h1> */}
