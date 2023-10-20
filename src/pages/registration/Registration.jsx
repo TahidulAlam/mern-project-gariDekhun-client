@@ -22,11 +22,13 @@ const Registration = () => {
     const image = e.target.img.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const userData = { name, image, email, password };
     if (isValidEmail(email) && isValidPassword(password)) {
       createUser(email, password)
         .then(() => {
           updateUser(name, image).then(() =>
             // toast.success("account create seccessfully")
+
             alert("success")
           );
           navigate("/");

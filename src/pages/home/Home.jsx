@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import TopCarousel from "./topCarousel/TopCarousel";
+import CountUp from "react-countup";
+import { AiOutlineFieldTime } from "react-icons/ai";
+// import TopCarousel from "./topCarousel/TopCarousel";
 import AllICategories from "./allCategories/AllICategories";
 import "./Home.css";
 const Home = () => {
@@ -11,12 +13,15 @@ const Home = () => {
   // const { url } = banner || {};
   console.log(banner);
   const bannerUrl = banner[0].url;
+  const bannerTitle = banner[0].title;
+  const bannerDes = banner[0].Description;
   return (
     <div>
       <div className="bg-transparent home mt-3">
         {/* <TopCarousel banner={slider_image}></TopCarousel>{" "} */}
         <img
-          style={{ height: "520px", width: "100%" }}
+          className="lg:h-[520px] h-auto w-[100%] object-cover"
+          // style={{ height: "520px", width: "100%" }}
           src={bannerUrl}
           alt=""
         />
@@ -28,6 +33,54 @@ const Home = () => {
           </h1>
         </div>
         <AllICategories allData={allData}></AllICategories>
+      </div>
+      <div>
+        <div className="mt-10">
+          <div className="flex justify-center items-center p-10">
+            <AiOutlineFieldTime className=" lg:text-6xl text-4xl text-slate-800 dark:text-white" />
+            <a className="font-semibold lg:text-3xl text-xl text-slate-800 dark:text-white backdrop-filter">
+              Gari Dekhun Impression
+            </a>
+          </div>
+          <div className="grid lg:grid-cols-3 grid-cols-1 text-5xl gap-5">
+            <div className="flex justify-center items-center bg-slate-100 p-16 rounded-lg flex-col gap-5">
+              <h1 className="text-lg">Total Product</h1>
+              <div>
+                <CountUp start={6285} end={9850} duration={3}></CountUp>
+                <span>++</span>{" "}
+              </div>
+            </div>
+            <div className="flex justify-center items-center bg-slate-100 p-16 rounded-lg flex-col gap-5">
+              <h1 className="text-lg">Total sell</h1>
+              <div>
+                <CountUp start={5600} end={7050} duration={3}></CountUp>
+                <span>++</span>{" "}
+              </div>
+            </div>
+            <div className="flex justify-center items-center bg-slate-100 p-16 rounded-lg flex-col gap-5">
+              <h1 className="text-lg">Total Partner</h1>
+              <div>
+                <CountUp start={200} end={350} duration={3}></CountUp>
+                <span>++</span>{" "}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 py-10 px-5 bg-slate-100 rounded-lg">
+            <div>
+              <img
+                className="object-cover rounded-lg mx-auto"
+                src={bannerUrl}
+                alt=""
+              />
+            </div>
+            <div>
+              <h1 className="text-3xl font-semibold ">{bannerTitle}</h1>
+              <h1>{bannerDes.slice(0, 200)}...</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const Adds = () => {
       ratings,
       shortDescription,
     };
-    console.log(formData);
+    // console.log(formData);
     try {
       const response = await fetch(`http://localhost:5000/allproducts`, {
         method: "POST",
@@ -41,19 +41,19 @@ const Adds = () => {
 
   return (
     <div>
-      <div className="w-8/12 mx-auto bg-slate-50 p-5 rounded-lg m-4">
+      <div className="w-8/12 mx-auto bg-slate-50 dark:glass p-5 rounded-lg m-4">
         <form onSubmit={handleSubmit}>
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
-              <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Information
+              <h2 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">
+                Peoduct Information
               </h2>
 
               <div className="mt-5 grid grid-cols-1 gap-y-3 sm:grid-cols-6 gap-3">
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Name
                   </label>
@@ -61,14 +61,14 @@ const Adds = () => {
                     type="text"
                     name="name"
                     id="name"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
 
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="image"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Image
                   </label>
@@ -76,14 +76,14 @@ const Adds = () => {
                     type="text"
                     name="image_link"
                     id="image"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
 
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="type"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Brand Name
                   </label>
@@ -91,7 +91,7 @@ const Adds = () => {
                     name="brand"
                     placeholder="select brand"
                     id="type"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6 px-2"
                   >
                     <option value="Ford">Ford</option>
                     <option value="Toyota">Toyota</option>
@@ -105,7 +105,7 @@ const Adds = () => {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="type"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Type
                   </label>
@@ -113,7 +113,7 @@ const Adds = () => {
                     placeholder="select type"
                     name="car_type"
                     id="type"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6 px-2"
                   >
                     <option value="coupe">Coupe</option>
                     <option value="convertible">Convertible</option>
@@ -128,7 +128,7 @@ const Adds = () => {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="price"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Price
                   </label>
@@ -136,14 +136,14 @@ const Adds = () => {
                     type="text"
                     name="price"
                     id="price"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
 
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="rating"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Rating
                   </label>
@@ -154,13 +154,13 @@ const Adds = () => {
                     min="0"
                     max="5"
                     step="0.1"
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
                 <div className="col-span-6">
                   <label
                     htmlFor="shortDescription"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Short Description
                   </label>
@@ -168,7 +168,7 @@ const Adds = () => {
                     name="shortDescription"
                     id="shortDescription"
                     rows={3}
-                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-gray-300 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -178,7 +178,7 @@ const Adds = () => {
           <div className="mt-6 flex items-center justify-end gap-x-6">
             <input
               type="submit"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-slate-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
             />
           </div>
         </form>

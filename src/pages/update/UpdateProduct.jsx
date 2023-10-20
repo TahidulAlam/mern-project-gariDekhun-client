@@ -57,17 +57,17 @@ const UpdateProduct = () => {
   return (
     <div>
       <form onSubmit={handleUpdateData}>
-        <div className="space-y-12">
-          <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
+        <div className="space-y-12  bg-slate-200 p-10 pb-0 dark:bg-transparent">
+          <div className="border-b border-gray-900/10 pb-5">
+            <h2 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">
               Information
             </h2>
 
-            <div className="mt-5 grid grid-cols-1 gap-y-3 sm:grid-cols-6 gap-3">
+            <div className="mt-5 grid grid-cols-1 gap-y-3 sm:grid-cols-6 gap-3 dark:text-white">
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Name
                 </label>
@@ -83,7 +83,7 @@ const UpdateProduct = () => {
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="image"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Image
                 </label>
@@ -99,7 +99,7 @@ const UpdateProduct = () => {
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="type"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Brand Name
                 </label>
@@ -122,7 +122,7 @@ const UpdateProduct = () => {
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="type"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Type
                 </label>
@@ -146,7 +146,7 @@ const UpdateProduct = () => {
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="price"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Price
                 </label>
@@ -162,7 +162,7 @@ const UpdateProduct = () => {
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="rating"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Rating
                 </label>
@@ -180,7 +180,7 @@ const UpdateProduct = () => {
               <div className="col-span-6">
                 <label
                   htmlFor="description"
-                  className="block text-sm font-medium text-gray-900"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Short Description
                 </label>
@@ -196,7 +196,7 @@ const UpdateProduct = () => {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-end gap-x-6">
+        <div className="mt-1 flex items-center justify-end px-10 pb-20 dark:text-white">
           <input
             type="submit"
             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

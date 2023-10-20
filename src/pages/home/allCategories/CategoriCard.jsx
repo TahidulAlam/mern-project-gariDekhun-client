@@ -9,9 +9,14 @@ const CategoriCard = ({ cardData }) => {
   return (
     <div>
       <Link to={`/home/${_id}`}>
-        <div className="card card-compact w-auto dark:bg-slate-800 bg-slate-200 p-5 h-auto">
-          <figure className="h-40">
-            <img style={{ width: "150px" }} src={logoLink} alt={brand} />
+        <div className="card card-compact w-auto dark:bg-slate-800 bg-slate-100 p-5 h-auto">
+          <figure className="lg:h-40 h-28">
+            <img
+              className="lg:w-[150px] w-[100px]"
+              // style={{ width: "150px" }}
+              src={logoLink}
+              alt={brand}
+            />
           </figure>
           <div className="card-body ">
             <h2 className="card-title justify-center dark:text-white text-black text-2xl font-medium">

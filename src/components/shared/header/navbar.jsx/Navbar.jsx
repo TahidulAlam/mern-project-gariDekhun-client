@@ -4,16 +4,18 @@ import { NavLink } from "react-router-dom";
 import Switcher from "../../../../switcher/Switcher";
 import { TbBrandGoogleBigQuery } from "react-icons/tb";
 import Logo from "./Logo";
+import useAuth from "../../../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, signInOut } = useAuth();
   return (
     <div>
-      <div className="navbar z-50 rounded-b-md flex justify-between bg-white dark:bg-transparent">
+      <div className="navbar z-50 w-[100%]  flex justify-between bg-slate-100 rounded-b-lg dark:bg-transparent">
         <div className="navbar w-[30%] flex-row lg:justify-start">
           <div className="dropdown">
             <label
               tabIndex={0}
-              className="btn bg-transparent border-transparent text-white pl-0  lg:hidden"
+              className="btn bg-transparent border-transparent dark:text-white text-black pl-0  lg:hidden"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +40,7 @@ const Navbar = () => {
                 <NavLink
                   to={"/"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   Home
                 </NavLink>
@@ -47,7 +49,7 @@ const Navbar = () => {
                 <NavLink
                   to={"/add-products"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   Add Products
                 </NavLink>
@@ -56,20 +58,20 @@ const Navbar = () => {
                 <NavLink
                   to={"/my-cart"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1 "
+                  className="block py-1 text-black dark:text-white"
                 >
                   My Cart
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to={"/about-us"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   About us
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="flex justify-center items-center gap-3">
@@ -110,7 +112,7 @@ const Navbar = () => {
                   My Cart
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to={"/about-us"}
                   activeClassName="bg-white text-dark-blue"
@@ -118,10 +120,47 @@ const Navbar = () => {
                 >
                   About us
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
-          <div className="flex items-center justify-center gap-3">
+          {user?.email ? (
+            <div className="flex items-center justify-center gap-3">
+              <h1 className="whitespace-nowrap lg:block hidden dark:text-white text-black">
+                {user.displayName}
+              </h1>
+              <div className="avatar rounded-full border-white">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} alt="Logo" />
+                </div>
+              </div>
+              <button
+                className="block py-1 text-white dark:text-black bg-black dark:bg-white rounded-lg px-3"
+                onClick={signInOut}
+              >
+                <h1 className="whitespace-nowrap">Log out</h1>
+              </button>
+              <div>
+                <Switcher />
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-10 rounded-full">
+                <img src="/GariDekhunLogo.png" alt="Logo" />
+              </div>
+              <NavLink
+                to={"/logIn"}
+                activeClassName="bg-white text-dark-blue"
+                className="block py-1 text-white dark:text-black bg-black dark:bg-white rounded-lg px-3"
+              >
+                Log In
+              </NavLink>
+              <div>
+                <Switcher />
+              </div>
+            </div>
+          )}
+          {/* <div className="flex items-center justify-center gap-3">
             <div className="w-10 rounded-full">
               <img src="/GariDekhunLogo.png" alt="Logo" />
             </div>
@@ -135,7 +174,7 @@ const Navbar = () => {
             <div>
               <Switcher />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
