@@ -27,9 +27,6 @@ const TopCarouselDetails = ({ banner }) => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        // pagination={{
-        //   clickable: true,
-        // }}
         scrollbar={{
           hide: true,
         }}

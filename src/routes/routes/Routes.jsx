@@ -101,6 +101,8 @@ import BrandDetails from "../../pages/brandDetails/BrandDetails";
 import ProductDetailsCard from "../../pages/brandDetails/productcard/ProductDetailsCard";
 import UpdateProduct from "../../pages/update/UpdateProduct";
 import SingleProduct from "../../pages/brandDetails/singleProduct/SingleProduct";
+import Login from "../../pages/login/Login";
+import Registration from "../../pages/registration/Registration";
 
 const Routes = createBrowserRouter([
   {
@@ -115,8 +117,9 @@ const Routes = createBrowserRouter([
             const slider_image = await fetchData(
               "http://localhost:5000/home/slider"
             );
+            const banner = await fetchData("http://localhost:5000/banner");
             const allData = await fetchData("http://localhost:5000/home");
-            return { slider_image, allData };
+            return { slider_image, allData, banner };
           } catch (error) {
             console.error("Error loading data:", error);
             return {};
@@ -164,6 +167,14 @@ const Routes = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>,
       },
       {
         path: "/allproducts/details/:id",

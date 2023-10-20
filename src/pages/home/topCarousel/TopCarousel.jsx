@@ -7,6 +7,7 @@ const TopCarousel = ({ banner }) => {
   return (
     <div>
       <TopCarouselDetails banner={banner}></TopCarouselDetails>
+      <img src="./slidernew.jpg" alt="" />
     </div>
   );
 };

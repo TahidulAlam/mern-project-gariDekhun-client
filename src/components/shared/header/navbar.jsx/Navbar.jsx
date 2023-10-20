@@ -8,8 +8,8 @@ import Logo from "./Logo";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar sticky z-50 rounded-b-md flex justify-between">
-        <div className="navbar-start">
+      <div className="navbar z-50 rounded-b-md flex justify-between bg-white dark:bg-transparent">
+        <div className="navbar w-[30%] flex-row lg:justify-start">
           <div className="dropdown">
             <label
               tabIndex={0}
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <NavLink
                   to={"/my-cart"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 "
                 >
                   My Cart
                 </NavLink>
@@ -74,20 +74,20 @@ const Navbar = () => {
           </div>
           <div className="flex justify-center items-center gap-3">
             <Logo></Logo>{" "}
-            <span className="text-2xl font-poppins dark:text-white text-white font-semibold hidden lg:block">
+            <span className="text-2xl font-poppins dark:text-white text-dark font-semibold hidden lg:block">
               {" "}
               Gari Dekhun
             </span>
           </div>
         </div>
-        <div className="navbar-end flex lg:justify-between">
+        <div className="navbar w-[70%] flex-row lg:justify-between justify-end">
           <div className="hidden lg:flex">
             <ul className="menu menu-horizontal px-1 dark:text-white text-white active:text-white">
               <li>
                 <NavLink
                   to={"/"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   Home
                 </NavLink>
@@ -96,7 +96,7 @@ const Navbar = () => {
                 <NavLink
                   to={"/add-products"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   Add Products
                 </NavLink>
@@ -105,7 +105,7 @@ const Navbar = () => {
                 <NavLink
                   to={"/my-cart"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   My Cart
                 </NavLink>
@@ -114,40 +114,27 @@ const Navbar = () => {
                 <NavLink
                   to={"/about-us"}
                   activeClassName="bg-white text-dark-blue"
-                  className="block py-1"
+                  className="block py-1 text-black dark:text-white"
                 >
                   About us
                 </NavLink>
               </li>
             </ul>
           </div>
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="/GariDekhunLogo.png" alt="Logo" />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 "
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-10 rounded-full">
+              <img src="/GariDekhunLogo.png" alt="Logo" />
+            </div>
+            <NavLink
+              to={"/logIn"}
+              activeClassName="bg-white text-dark-blue"
+              className="block py-1 text-white dark:text-black bg-black dark:bg-white rounded-lg px-3"
             >
-              <li>
-                <div className="flex justify-between">
-                  <div>
-                    <NavLink
-                      to={"/logIn"}
-                      activeClassName="bg-white text-dark-blue"
-                      className="block py-1"
-                    >
-                      Log In
-                    </NavLink>
-                  </div>
-                  <div>
-                    <Switcher />
-                  </div>
-                </div>
-              </li>
-            </ul>
+              Log In
+            </NavLink>
+            <div>
+              <Switcher />
+            </div>
           </div>
         </div>
       </div>

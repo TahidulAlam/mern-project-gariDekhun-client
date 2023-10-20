@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
-import auth from "../utils/firebase/firebase.config";
+import { AuthContext } from "../provider/AuthProvider";
 
 const useAuth = () => {
-  //   const allAuth = useContext(AuthContext);
-  //   return allAuth;
+  const allAuth = useContext(AuthContext);
+  return allAuth;
 };
 
 export default useAuth;

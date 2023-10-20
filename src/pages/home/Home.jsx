@@ -3,19 +3,27 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import TopCarousel from "./topCarousel/TopCarousel";
 import AllICategories from "./allCategories/AllICategories";
-
+import "./Home.css";
 const Home = () => {
-  const { slider_image, allData } = useLoaderData();
-  console.log(allData);
-  console.log(slider_image);
+  const { slider_image, allData, banner } = useLoaderData();
+  // console.log(allData);
+  // console.log(slider_image);
+  // const { url } = banner || {};
+  console.log(banner);
+  const bannerUrl = banner[0].url;
   return (
     <div>
-      <div>
-        <TopCarousel banner={slider_image}></TopCarousel>{" "}
+      <div className="bg-transparent home mt-3">
+        {/* <TopCarousel banner={slider_image}></TopCarousel>{" "} */}
+        <img
+          style={{ height: "520px", width: "100%" }}
+          src={bannerUrl}
+          alt=""
+        />
       </div>
-      <div className="mt-24">
+      <div className="mt-2">
         <div>
-          <h1 className="text-center font-semibold text-4xl text-white p-10">
+          <h1 className="text-center font-semibold text-4xl dark:text-white text-black p-10">
             All Categories
           </h1>
         </div>
