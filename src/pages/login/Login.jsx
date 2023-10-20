@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { isValidEmail, isValidPassword } from "../../components/validation";
 import useAuth from "../../hooks/useAuth";
 import SocialAuth from "../../components/SocialAuth";
+import swal from "sweetalert";
 
 SocialAuth;
 const Login = () => {
@@ -27,12 +28,12 @@ const Login = () => {
     if (isValidEmail(email)) {
       signIn(email, password)
         .then(() => {
-          alert.success("Sign In seccessfully");
+          swal("Sign In seccessfully", "success");
           navigate(location.state ? location.state : "/");
         })
-        .catch((err) => alert("invalid input"));
+        .catch((err) => swal("invalid input", "error"));
     } else {
-      return alert("invalid input");
+      return swal("invalid input", "error");
     }
   };
   return (

@@ -2,11 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-// import BrandDetailsCard from "./BrandDetailsCard";
-import Banner from "./banner/Banner";
 import ProductDetailsCard from "./productcard/ProductDetailsCard";
 import BannerSlider from "./banner/BannerSlider";
-// import ProductCard from "./productcard/ProductCard";
 
 const BrandDetails = () => {
   const brandData = useLoaderData();
@@ -29,11 +26,9 @@ const BrandDetails = () => {
         </div>
       </div>
       <div>
-        {/* <Banner data={promotionalBanners}></Banner> */}
         <BannerSlider sliderData={promotionalBanners}></BannerSlider>
       </div>
       <div className="">
-        {/* <h1>{brand} Products</h1> */}
         <div>
           <ProductDetailsCard params={brand}></ProductDetailsCard>
         </div>

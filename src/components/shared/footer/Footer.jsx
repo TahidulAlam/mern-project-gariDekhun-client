@@ -5,7 +5,7 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer footer-center p-10 dark:bg-slate-900 bg-slate-100 text-primary-content mt-5 rounded-t-lg">
+      <footer className="footer footer-center p-10 dark:bg-gradient-to-r dark:to-[#060606] dark:via-[#060606] dark:from-[#2B2C41] bg-slate-100 text-primary-content mt-5 rounded-t-lg">
         <aside>
           <div className="flex justify-center items-center p-10">
             {/* <AiOutlineFieldTime className="lg:text-8xl text-6xl dark:text-white text-black p-1" /> */}

@@ -45,11 +45,19 @@ const AuthProvider = ({ children }) => {
       photoURL: image,
     });
   };
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     setUser(user);
+  //     setLoading(false);
+  //   });
+  // }, []);
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
     });
+
+    return () => unsubscribe();
   }, []);
   const authInfo = {
     createUser,

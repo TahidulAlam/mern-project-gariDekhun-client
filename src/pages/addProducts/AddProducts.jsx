@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import swal from "sweetalert";
 const Adds = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +21,6 @@ const Adds = () => {
       ratings,
       shortDescription,
     };
-    // console.log(formData);
     try {
       const response = await fetch(`http://localhost:5000/allproducts`, {
         method: "POST",
@@ -32,7 +32,7 @@ const Adds = () => {
       const result = await response.json();
       console.log(result);
       if (result.insertedId) {
-        alert("product added");
+        swal("product added");
       }
     } catch (error) {
       console.log(error);

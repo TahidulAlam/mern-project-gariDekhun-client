@@ -7,6 +7,7 @@ import SocialAuth from "../../components/SocialAuth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { isValidEmail, isValidPassword } from "../../components/validation";
+import swal from "sweetalert";
 
 const Registration = () => {
   const { createUser, updateUser } = useAuth();
@@ -27,20 +28,18 @@ const Registration = () => {
       createUser(email, password)
         .then(() => {
           updateUser(name, image).then(() =>
-            // toast.success("account create seccessfully")
-
-            alert("success")
+            swal("account create seccessfully", "success")
           );
           navigate("/");
         })
-        .catch((err) => alert.error({ err }));
+        .catch((err) => swal.error({ err }));
     } else {
       if (!isValidEmail(email)) {
-        return alert.error("invalid email");
+        return swal.error("invalid email");
       } else if (!isValidPassword(password)) {
-        return alert.error("plz use strong password");
+        return swal.error("plz use strong password");
       } else {
-        return alert.error("plz use strong password and proper mail");
+        return swal.error("plz use strong password and proper mail");
       }
     }
   };

@@ -4,10 +4,14 @@ import { useLoaderData } from "react-router-dom";
 
 const SingleProduct = () => {
   const data = useLoaderData();
+  console.log(data);
   const loadedData = data.productCardDetails;
+  console.log(loadedData);
   const { brand, car_type, description, image_link, name, price, ratings } =
     loadedData || {};
+
   const handleCart = async (loadedData) => {
+    console.log(loadedData);
     try {
       const response = await fetch("http://localhost:5000/cart", {
         method: "POST",
@@ -17,11 +21,14 @@ const SingleProduct = () => {
         body: JSON.stringify({ loadedData }),
       });
 
-      const result = await response.json();
-      console.log(result);
-
-      if (result.insertedId) {
-        alert("Product added");
+      if (!response.ok) {
+        console.error("Request failed:", response.status, response.statusText);
+      } else {
+        const result = await response.json();
+        console.log(result);
+        if (result.insertedId) {
+          alert("Product added");
+        }
       }
     } catch (error) {
       console.log(error);
