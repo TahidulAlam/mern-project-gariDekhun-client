@@ -13,12 +13,6 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const BannerSlider = ({ sliderData }) => {
-  // const progressCircle = useRef(null);
-  // const progressContent = useRef(null);
-  // const onAutoplayTimeLeft = (s, time, progress) => {
-  //   progressCircle.current.style.setProperty("--progress", 1 - progress);
-  //   progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  // };
   return (
     <>
       <Swiper
@@ -36,19 +30,27 @@ const BannerSlider = ({ sliderData }) => {
         // onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        {sliderData?.map((item, index) => (
+        {/* {sliderData?.map((item, index) => (
           <SwiperSlide key={index}>
             <img src={item} alt="" />
           </SwiperSlide>
-        ))}
+        ))} */}
         {/* <SwiperSlide>Slide 1</SwiperSlide> */}
-
-        <div className="autoplay-progress" slot="container-end">
-          {/* <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span> */}
-        </div>
+        {sliderData === null ? (
+          <div>Loading...</div>
+        ) : sliderData.length === 0 ? (
+          <div className="m-20  grid grid-cols-1">
+            <h1 className="p-56  font-bold text-center text-5xl">
+              Products Availabele soon...
+            </h1>
+          </div>
+        ) : (
+          sliderData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <img src={item} alt="" />
+            </SwiperSlide>
+          ))
+        )}
       </Swiper>
     </>
   );

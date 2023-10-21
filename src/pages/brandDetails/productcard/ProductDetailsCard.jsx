@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const ProductDetailsCard = ({ params }) => {
   const [loadedData, setLoadedData] = useState(null);
+  console.log("pd", loadedData);
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -19,19 +20,25 @@ const ProductDetailsCard = ({ params }) => {
     fetchData();
   }, [params]);
 
-  // console.log(loadedData);
   return (
     <div>
-      <div>
-        {/* <h2>Product Details</h2> */}
-        <div className="grid lg:grid-cols-3 grid-cols-1  gap-5 mt-5 w-[90%] mx-auto">
-          {loadedData?.map((dd) => (
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-5 w-[90%] mx-auto">
+        {loadedData === null ? (
+          <div>Loading...</div>
+        ) : loadedData.length === 0 ? (
+          ""
+        ) : (
+          loadedData.map((dd) => (
             <ProductCard key={dd._id} data={dd}></ProductCard>
-          ))}
-        </div>
+          ))
+        )}
       </div>
     </div>
   );
 };
 
 export default ProductDetailsCard;
+
+// {loadedData?.map((dd) => (
+//   <ProductCard key={dd._id} data={dd}></ProductCard>
+// ))}

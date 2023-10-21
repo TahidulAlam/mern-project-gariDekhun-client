@@ -15,10 +15,8 @@ const Home = () => {
   return (
     <div>
       <div className="bg-transparent home mt-3">
-        {/* <TopCarousel banner={slider_image}></TopCarousel>{" "} */}
         <img
           className="lg:h-[520px] h-auto w-[100%] object-cover rounded-lg"
-          // style={{ height: "520px", width: "100%" }}
           src={bannerUrl}
           alt=""
         />
