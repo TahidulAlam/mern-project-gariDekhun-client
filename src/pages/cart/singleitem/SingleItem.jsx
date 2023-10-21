@@ -5,11 +5,7 @@ import swal from "sweetalert";
 
 /* eslint-disable no-unused-vars */
 const SingleItem = ({ CardData, onDelete }) => {
-  console.log(CardData);
   const newData = CardData.loadedData;
-  // console.log(card);
-
-  // const [card, setCard] = useState(newData);
   const {
     _id,
     brand,
@@ -37,12 +33,6 @@ const SingleItem = ({ CardData, onDelete }) => {
         fetch(`http://localhost:5000/cart/${deleteId}`, { method: "DELETE" })
           .then((res) => res.json())
           .then((data) => {
-            console.log("Delete successful", data);
-            // if (data.success === true) {
-            //   const updatedCard = card.filter((item) => item._id !== deleteId);
-            //   setCard(updatedCard);
-            //   console.log(updatedCard);
-            // }
             onDelete(deleteId);
           });
       } else {

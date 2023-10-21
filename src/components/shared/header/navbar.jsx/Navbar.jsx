@@ -9,8 +9,7 @@ import useAuth from "../../../../hooks/useAuth";
 
 const Navbar = () => {
   const { user, signInOut } = useAuth();
-  // const id = user.email;
-  // console.log(id);
+
   return (
     <div>
       <div className="navbar z-50 w-[100%]  flex justify-between bg-slate-100 rounded-b-lg dark:bg-transparent">

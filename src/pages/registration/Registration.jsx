@@ -38,7 +38,6 @@ const Registration = () => {
               body: JSON.stringify(userData),
             });
             const result = await response.json();
-            console.log(result);
             if (result.insertedId) {
               swal("User Created");
             }

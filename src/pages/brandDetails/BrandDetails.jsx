@@ -9,7 +9,6 @@ const BrandDetails = () => {
   const brandData = useLoaderData();
   const brand_details = brandData.brand_details;
   const productCardData = brandData.productCard;
-  console.log("pd data", productCardData);
   const { _id, brand, promotionalBanners, description, logoLink, products } =
     brand_details || {};
 

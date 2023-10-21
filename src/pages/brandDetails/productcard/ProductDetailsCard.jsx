@@ -4,7 +4,6 @@
 import React, { useCallback } from "react";
 import ProductCard from "./ProductCard";
 import { useEffect, useState } from "react";
-// import fetchData from "../../../error/FetchErrorHandle";
 
 const ProductDetailsCard = ({ params }) => {
   const [loadedData, setLoadedData] = useState(null);
