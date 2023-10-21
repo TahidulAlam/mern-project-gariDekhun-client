@@ -15,13 +15,16 @@ const SingleProduct = () => {
   const handleCart = async (loadedData) => {
     const id = user.uid;
     try {
-      const response = await fetch("http://localhost:5000/cart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ loadedData, id }),
-      });
+      const response = await fetch(
+        "https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/cart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ loadedData, id }),
+        }
+      );
 
       if (!response.ok) {
         console.error("Request failed:", response.status, response.statusText);

@@ -30,13 +30,16 @@ const Registration = () => {
           const id = user.uid;
           const userData = { name, image, email, password, id };
           try {
-            const response = await fetch(`http://localhost:5000/users`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(userData),
-            });
+            const response = await fetch(
+              `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/users`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userData),
+              }
+            );
             const result = await response.json();
             if (result.insertedId) {
               swal("User Created");

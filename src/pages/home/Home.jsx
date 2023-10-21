@@ -30,11 +30,11 @@ const Home = () => {
         <AllICategories allData={allData}></AllICategories>
       </div>
       <div>
-        <div className="mt-10">
+        <div className="mt-10 w-[90%] lg:w-[full] mx-auto">
           <div className="flex justify-center items-center p-10">
             {/* <AiOutlineFieldTime className=" lg:text-6xl text-4xl text-slate-800 dark:text-white" /> */}
             <a className="font-semibold lg:text-3xl text-xl text-slate-800 dark:text-white backdrop-filter">
-              Gari Dekhun Impression
+              Gari Dekhun Experience
             </a>
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-1 text-5xl gap-5">

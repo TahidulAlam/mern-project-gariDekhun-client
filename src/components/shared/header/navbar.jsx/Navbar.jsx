@@ -3,7 +3,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Switcher from "../../../../switcher/Switcher";
-import { TbBrandGoogleBigQuery } from "react-icons/tb";
 import Logo from "./Logo";
 import useAuth from "../../../../hooks/useAuth";
 
@@ -36,7 +35,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 dark:glass bg-white"
             >
               <li>
                 <NavLink
@@ -58,24 +57,13 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  // to={`my-cart/${userMail}`}
                   to={"my-cart"}
-                  // to={`my-cart/${id}`}
                   activeClassName="bg-white text-dark-blue"
                   className="block py-1 text-black dark:text-white"
                 >
                   My Cart
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink
-                  to={"/about-us"}
-                  activeClassName="bg-white text-dark-blue"
-                  className="block py-1 text-black dark:text-white"
-                >
-                  About us
-                </NavLink>
-              </li> */}
             </ul>
           </div>
           <div className="flex justify-center items-center gap-3">

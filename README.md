@@ -1,8 +1,15 @@
-# React + Vite
+Live Link: https://gari-dekhun.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gari dekhun is a Simple Ecommerce project build with MongoDb, ExpressJs, ReactJs, NodeJS (MERN)
 
-Currently, two official plugins are available:
+There are details about this project :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+** Multi-platform Authentication: Users can create accounts via Google, GitHub, or manual registration.
+
+** Product Viewing: Users can browse and view product details, including descriptions and prices.
+
+** User Product Listings: Users can add new products to the platform.
+
+** Shopping Cart: Users have personalized shopping carts to manage their selected items.
+
+** User Accounts: Each user has their own account, offering features like order history and cart management.

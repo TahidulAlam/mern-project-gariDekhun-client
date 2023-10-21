@@ -11,7 +11,7 @@ const ProductDetailsCard = ({ params }) => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/allproducts/${params}`
+        `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/allproducts/${params}`
       );
       const data = await response.json();
       setLoadedData(data);
@@ -22,7 +22,7 @@ const ProductDetailsCard = ({ params }) => {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-5 w-[90%] mx-auto">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-5 w-[90%] mx-auto">
         {loadedData === null ? (
           <div>Loading...</div>
         ) : loadedData.length === 0 ? (

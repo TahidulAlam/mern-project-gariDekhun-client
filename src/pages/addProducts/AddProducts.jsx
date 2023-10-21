@@ -22,13 +22,16 @@ const Adds = () => {
       shortDescription,
     };
     try {
-      const response = await fetch(`http://localhost:5000/allproducts`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/allproducts`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const result = await response.json();
       if (result.insertedId) {
         swal("product added");
@@ -40,7 +43,7 @@ const Adds = () => {
 
   return (
     <div>
-      <div className="w-8/12 mx-auto bg-slate-50 dark:glass p-5 rounded-lg m-4">
+      <div className="w-10/12 mx-auto bg-slate-50 dark:glass p-5 rounded-lg m-4">
         <form onSubmit={handleSubmit}>
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">

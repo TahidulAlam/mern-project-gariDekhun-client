@@ -6,7 +6,7 @@ import Main from "../../layout/Main";
 import Home from "../../pages/home/Home";
 import AddProducts from "../../pages/addProducts/AddProducts";
 import Cart from "../../pages/cart/Cart";
-import AboutUs from "../../pages/aboutUs/AboutUs";
+// import AboutUs from "../../pages/aboutUs/AboutUs";
 import BrandDetails from "../../pages/brandDetails/BrandDetails";
 import ProductDetailsCard from "../../pages/brandDetails/productcard/ProductDetailsCard";
 import UpdateProduct from "../../pages/update/UpdateProduct";
@@ -29,14 +29,14 @@ const Routes = createBrowserRouter([
         loader: async () => {
           try {
             const slider_image = await fetch(
-              "http://localhost:5000/home/slider"
+              "https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/home/slider"
             ).then((response) => response.json());
-            const banner = await fetch("http://localhost:5000/banner").then(
-              (response) => response.json()
-            );
-            const allData = await fetch("http://localhost:5000/home").then(
-              (response) => response.json()
-            );
+            const banner = await fetch(
+              "https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/banner"
+            ).then((response) => response.json());
+            const allData = await fetch(
+              "https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/home"
+            ).then((response) => response.json());
             return { slider_image, allData, banner };
           } catch (error) {
             console.error("Error loading data:", error);
@@ -50,7 +50,7 @@ const Routes = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const brand_details = await fetch(
-              `http://localhost:5000/home/${params.id}`
+              `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/home/${params.id}`
             ).then((response) => response.json());
             return { brand_details };
           } catch (error) {
@@ -81,7 +81,7 @@ const Routes = createBrowserRouter([
         loader: async () => {
           try {
             const productCardDetails = await fetch(
-              "http://localhost:5000/cart"
+              "https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/cart"
             ).then((response) => response.json());
             return { productCardDetails };
           } catch (error) {
@@ -90,10 +90,10 @@ const Routes = createBrowserRouter([
           }
         },
       },
-      {
-        path: "/about-us",
-        element: <AboutUs></AboutUs>,
-      },
+      // {
+      //   path: "/about-us",
+      //   element: <AboutUs></AboutUs>,
+      // },
       {
         path: "/login",
         element: <Login></Login>,
@@ -112,7 +112,7 @@ const Routes = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const productCardDetails = await fetch(
-              `http://localhost:5000/allproducts/details/${params.id}`
+              `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/allproducts/details/${params.id}`
             ).then((response) => response.json());
             return { productCardDetails };
           } catch (error) {
@@ -131,7 +131,7 @@ const Routes = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const productDataUpdate = await fetch(
-              `http://localhost:5000/allproducts/update/${params.id}`
+              `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/allproducts/update/${params.id}`
             ).then((response) => response.json());
             return { productDataUpdate };
           } catch (error) {

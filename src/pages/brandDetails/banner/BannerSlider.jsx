@@ -40,7 +40,7 @@ const BannerSlider = ({ sliderData }) => {
           <div>Loading...</div>
         ) : sliderData.length === 0 ? (
           <div className="m-20  grid grid-cols-1">
-            <h1 className="p-56  font-bold text-center text-5xl">
+            <h1 className="lg:p-56 p-10  font-bold text-center lg:text-5xl text-xl dark:text-white text-black">
               Products Availabele soon...
             </h1>
           </div>

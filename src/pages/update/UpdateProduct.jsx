@@ -37,7 +37,7 @@ const UpdateProduct = () => {
     };
     try {
       const response = await fetch(
-        `http://localhost:5000/allproducts/update/${loadedData._id}`,
+        `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/allproducts/update/${loadedData._id}`,
         {
           method: "PUT",
           headers: {

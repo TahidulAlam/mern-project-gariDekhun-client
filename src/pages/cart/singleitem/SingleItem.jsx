@@ -30,7 +30,10 @@ const SingleItem = ({ CardData, onDelete }) => {
         swal("Poof! The item has been deleted!", {
           icon: "success",
         });
-        fetch(`http://localhost:5000/cart/${deleteId}`, { method: "DELETE" })
+        fetch(
+          `https://gari-dekhun-backend-lus7ki2wk-tahidulalam.vercel.app/cart/${deleteId}`,
+          { method: "DELETE" }
+        )
           .then((res) => res.json())
           .then((data) => {
             onDelete(deleteId);
