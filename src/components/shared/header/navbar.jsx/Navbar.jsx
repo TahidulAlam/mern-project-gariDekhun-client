@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -8,6 +9,8 @@ import useAuth from "../../../../hooks/useAuth";
 
 const Navbar = () => {
   const { user, signInOut } = useAuth();
+  // const id = user.email;
+  // console.log(id);
   return (
     <div>
       <div className="navbar z-50 w-[100%]  flex justify-between bg-slate-100 rounded-b-lg dark:bg-transparent">
@@ -56,7 +59,9 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"/my-cart"}
+                  // to={`my-cart/${userMail}`}
+                  to={"my-cart"}
+                  // to={`my-cart/${id}`}
                   activeClassName="bg-white text-dark-blue"
                   className="block py-1 text-black dark:text-white"
                 >
@@ -105,7 +110,9 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"/my-cart"}
+                  // to={`my-cart/${userMail}`}
+                  to={"my-cart"}
+                  // to={`my-cart/${id}`}
                   activeClassName="bg-white text-dark-blue"
                   className="block py-1 text-black dark:text-white"
                 >

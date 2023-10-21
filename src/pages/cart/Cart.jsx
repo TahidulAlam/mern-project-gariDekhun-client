@@ -1,29 +1,20 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import SingleItem from "./singleitem/SingleItem";
+// import React, { useState } from "react";
+// import { useLoaderData } from "react-router-dom";
+
+import CartDetails from "./CartDetails";
 
 const Cart = () => {
-  const Data = useLoaderData();
-  const newData = Data.productCardDetails;
+  // const { user } = useAuth();
+  // console.log(user.uid);
+  // const newData = Data.productCardDetails;
   // console.log(newData._id);
-  const [card, setCard] = useState(newData);
+  // const [card, setCard] = useState(newData);
   // console.log(newData);
   return (
     <div>
-      <div className="mt-5">
-        <div className="grid grid-cols-2 gap-5 ">
-          {card?.map((dd) => (
-            <SingleItem
-              key={dd._id}
-              card={card}
-              setCard={setCard}
-              CardData={dd}
-            ></SingleItem>
-          ))}
-        </div>
-      </div>
+      <CartDetails></CartDetails>
     </div>
   );
 };

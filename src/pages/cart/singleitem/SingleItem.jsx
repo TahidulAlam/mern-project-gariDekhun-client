@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+
+// import { useState } from "react";
 import swal from "sweetalert";
 
-const SingleItem = ({ CardData, card, setCard }) => {
-  //   console.log(data);
-  //   const [cartDelete, setCartDelete] = useState();
+/* eslint-disable no-unused-vars */
+const SingleItem = ({ CardData, onDelete }) => {
+  console.log(CardData);
   const newData = CardData.loadedData;
-  // console.log(newData);
+  // console.log(card);
+
+  // const [card, setCard] = useState(newData);
   const {
     _id,
     brand,
@@ -18,12 +20,9 @@ const SingleItem = ({ CardData, card, setCard }) => {
     price,
     ratings,
   } = newData || {};
-  // const newDes = description.slice(0, 120);
-  // console.log(CardData);
   const deleteId = CardData._id;
-  console.log(deleteId);
+
   const handleDelete = (deleteId) => {
-    console.log(deleteId);
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this item!",
@@ -39,10 +38,12 @@ const SingleItem = ({ CardData, card, setCard }) => {
           .then((res) => res.json())
           .then((data) => {
             console.log("Delete successful", data);
-            if (data.success === true) {
-              const updatedCard = card.filter((item) => item._id !== deleteId);
-              setCard(updatedCard);
-            }
+            // if (data.success === true) {
+            //   const updatedCard = card.filter((item) => item._id !== deleteId);
+            //   setCard(updatedCard);
+            //   console.log(updatedCard);
+            // }
+            onDelete(deleteId);
           });
       } else {
         swal("The item is safe!");
@@ -60,7 +61,7 @@ const SingleItem = ({ CardData, card, setCard }) => {
           <h2 className="card-title dark:text-white text-black text-2xl">
             {name}
           </h2>
-          <p className=" dark:text-white text-black">{price}</p>
+          <p className="dark:text-white text-black">{price}</p>
           <div className="card-actions justify-center">
             <button
               onClick={() => handleDelete(deleteId)}

@@ -10,7 +10,8 @@ import { isValidEmail, isValidPassword } from "../../components/validation";
 import swal from "sweetalert";
 
 const Registration = () => {
-  const { createUser, updateUser } = useAuth();
+  const { user, createUser, updateUser } = useAuth();
+  console.log(user);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -23,10 +24,27 @@ const Registration = () => {
     const image = e.target.img.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const userData = { name, image, email, password };
     if (isValidEmail(email) && isValidPassword(password)) {
       createUser(email, password)
-        .then(() => {
+        .then(async () => {
+          const id = user.uid;
+          const userData = { name, image, email, password, id };
+          try {
+            const response = await fetch(`http://localhost:5000/users`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(userData),
+            });
+            const result = await response.json();
+            console.log(result);
+            if (result.insertedId) {
+              swal("User Created");
+            }
+          } catch (error) {
+            console.log(error);
+          }
           updateUser(name, image).then(() =>
             swal("account create seccessfully", "success")
           );

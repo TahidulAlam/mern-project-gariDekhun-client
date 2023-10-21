@@ -6,8 +6,11 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 // import TopCarousel from "./topCarousel/TopCarousel";
 import AllICategories from "./allCategories/AllICategories";
 import "./Home.css";
+import useAuth from "../../hooks/useAuth";
 const Home = () => {
   const { slider_image, allData, banner } = useLoaderData();
+  const { user } = useAuth();
+  console.log(user);
   // console.log(allData);
   // console.log(slider_image);
   // const { url } = banner || {};
